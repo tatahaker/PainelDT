@@ -17,19 +17,19 @@ echo
 rm /root/i.sh
 exit 0
 }
-[[ -e /root/painelMod/src/index.ts ]] && {
+[[ -e /root/PainelDT/src/index.ts ]] && {
   clear
   echo "O Painel já está instalado, deseja remover? (s/n)"
   read remo
   [[ $remo = @(s|S) ]] && {
-  cd /root/painelMod
+  cd /root/PainelDT
   rm -r painelbackup > /dev/null
   mkdir painelbackup > /dev/null
   cp prisma/database.db painelbackup
   cp .env painelbackup
   zip -r painelbackup.zip painelbackup
   mv painelbackup.zip /root
-  rm -r /root/painelMod
+  rm -r /root/PainelDT
   rm /root/i.sh
   echo "Removido com sucesso!"
   exit 0
@@ -57,7 +57,7 @@ curl -fsSL https://deb.nodesource.com/setup_20.x | bash
 apt-get install -y nodejs -y
 #=========================
 git clone https://github.com/endblack/painelMod.git
-cd /root/painelMod
+cd /root/PainelDT
 chmod 777 pon poff menuop backmod
 mv pon poff menuop backmod /bin
 echo "PORT=$porta" > .env
@@ -78,7 +78,7 @@ clear
 echo
 echo
 echo "TUDO INSTALADO!"
-echo "Os Arquivos Ficam Na Pasta /root/painelMod"
+echo "Os Arquivos Ficam Na Pasta /root/PainelDT"
 echo
 echo "Comando para ATIVAR: pon"
 echo "Comando para DESATIVAR: poff"
