@@ -3,7 +3,7 @@
 fazerbackup() {
   clear
   echo "Fazendo bakcup..."
-  cd /root/painelMod
+  cd /root/PainelDT
   #rm -r painelbackup > /dev/null
   #mkdir painelbackup > /dev/null
   cp prisma/database.db painelbackup
@@ -34,7 +34,7 @@ removerpainel() {
     echo "Removendo..."
     poff
     rm /bin/pon /bin/poff /bin/menuop /bin/backmod
-    rm -r /root/painelMod
+    rm -r /root/PainelDT
     echo "Removido com sucesso!"
     exit 0
   }
@@ -56,8 +56,8 @@ restaurarback() {
     cd /root
     unzip painelbackup.zip
     cd painelbackup
-    mv database.db ../painelMod/prisma
-    mv .env ../painelMod
+    mv database.db ../PainelDT/prisma
+    mv .env ../PainelDT
     cd /root
     rm -r painelbackup
     pon
@@ -72,10 +72,10 @@ restaurarback() {
   }
   menuop
 }
-#[[ ! -e /root/painelMod/src/index.ts ]] && exit 0
+#[[ ! -e /root/PainelDT/src/index.ts ]] && exit 0
 menuop() {
   clear
-  echo "Bem vindoª ao painelMod menu"
+  echo "Bem vindoª ao PainelDT menu"
   echo 
   echo "1. Fazer backup"
   echo "2. Restaurar backup"
